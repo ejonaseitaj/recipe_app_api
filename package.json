@@ -1,0 +1,14 @@
+{
+  "name": "recipe_app_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "docker compose run --rm app -c 'python manage.py test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ejonaseitaj/recipe_app_api.git"
+  },
+  "private": true
+}

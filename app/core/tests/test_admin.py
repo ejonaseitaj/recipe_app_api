@@ -8,6 +8,7 @@ from django.urls import reverse
 
 class AdminSiteTests(TestCase):
     """Tests for Django admin"""
+
     def setUp(self):
         """Create user and client."""
         self.client = Client()
@@ -25,7 +26,6 @@ class AdminSiteTests(TestCase):
         res = self.client.get(url)
         self.assertContains(res, self.user.name)
         self.assertContains(res, self.user.email)
-
 
     def test_edit_user_page(self):
         """Test that edit user page works"""
