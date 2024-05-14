@@ -2,8 +2,7 @@
 URL mapping for the user API.
 """
 from django.urls import path
-
-from app.user import views
+from user import views
 
 app_name = 'user'
 
