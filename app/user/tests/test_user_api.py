@@ -22,11 +22,11 @@ class PublicUserApiTest(TestCase):
         """Testing the user registration successful"""
         payload = {
             'email': 'test@example.com',
-            'password': 'passtest',
+            'password': 'testpass123',
             'name': 'Test Name'
         }
-
         res = self.client.post(CREATE_USER_URL, payload)
+
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)
         user = get_user_model().objects.get(email=payload['email'])
         self.assertTrue(user.check_password(payload['password']))
@@ -48,7 +48,7 @@ class PublicUserApiTest(TestCase):
         """Test error returned if password is too short."""
         payload = {
             'email': 'test@example.com',
-            'password': 'test',
+            'password': 'te',
             'name': 'Test Name'
         }
         res = self.client.post(CREATE_USER_URL, payload)
