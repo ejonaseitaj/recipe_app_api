@@ -9,6 +9,7 @@ from psycopg2 import OperationalError as Psycopg2OpError
 @patch('core.management.commands.wait_for_db.Command.check')
 class CommandTests(SimpleTestCase):
     """Test commands."""
+
     def test_wait_for_db_ready(self, patched_check):
         patched_check.return_value = True
 
